@@ -50,7 +50,6 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         categoryViewModel.also { vm ->
-            vm.category.observe(viewLifecycleOwner, Observer { category -> opencategory(category) })
             vm.categories.observe(viewLifecycleOwner, Observer { categories ->
                 recCategories.apply {
                     layoutManager =
@@ -71,20 +70,9 @@ class HomeFragment : Fragment() {
                 }
             })
         }
-
-
-
+        
     }
 
-    private fun opencategory(category: Category) {
-        activity?.let {
-            Intent(it, CategoryDetailActivity::class.java).apply {
-                putExtra("data", category)
-            }.also { intent ->
-                it.startActivity(intent)
-            }
-        }
-    }
 
     private fun openPromoDetail(productPromo: ProductPromo) {
         activity?.let {
