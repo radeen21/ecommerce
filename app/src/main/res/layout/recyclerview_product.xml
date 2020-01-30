@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmProduct"
+            type="com.example.ecommerceapps.view.product.ProductViewModel" />
+
+        <variable
+            name="product"
+            type="com.example.ecommerceapps.data.model.ProductPromo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{view -> vmProduct.loadProduct(product)}"
+        tools:ignore="MissingConstraints"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:id="@+id/ivProduct"
+            app:image="@{product.imageUrl}"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:background="@drawable/shape"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_border_black_24dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/ivProduct"
+            app:layout_constraintBottom_toBottomOf="@id/ivProduct"/>
+
+        <TextView
+            android:id="@+id/tvCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:text="@{product.title}"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/ivProduct"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProduct"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.example.ecommerceapps.view.category.CategoryViewModel" />
+
+        <variable
+            name="category"
+            type="com.example.ecommerceapps.data.model.Category" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:onClick="@{v -> vm.loadCategory(category)}"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/ivCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:image="@{category.imageUrl}"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/circle_shape"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{category.name}"
+            android:visibility="visible"
+            android:layout_marginRight="25dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivCategories" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

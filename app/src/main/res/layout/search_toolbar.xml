@@ -1,0 +1,36 @@
+<androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:elevation="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#959083"
+        android:orientation="vertical"
+        android:gravity="center|right">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:gravity="center|right">
+
+            <TextView
+                android:id="@+id/editMobileNo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/search_edittext"
+                android:hint="Search"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:gravity="center" >
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>
